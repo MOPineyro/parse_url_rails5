@@ -46,6 +46,6 @@ class ParsedUrlsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def parsed_url_params
-      params.require(:parsed_url).permit(:url, :h1, :h2, :h3, :links)
+      params.require(:parsed_url).permit(:url)
     end
 end
