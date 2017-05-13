@@ -1,4 +1,6 @@
 class ParsedUrl < ApplicationRecord
+  validates :url, format: { with: /\A#{URI::regexp(['http', 'https'])}\z/,
+    message: "format of url must be: http://example.com or https://example.com" }
   before_save :parse
 
   private
