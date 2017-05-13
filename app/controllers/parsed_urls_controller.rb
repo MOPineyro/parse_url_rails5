@@ -16,8 +16,9 @@ class ParsedUrlsController < ApplicationController
   # POST /parsed_urls
   def create
     @parsed_url = ParsedUrl.new(parsed_url_params)
-
     if @parsed_url.save
+      # puts @parsed_url.inspect
+      # @parsed_url.id
       render json: @parsed_url, status: :created, location: @parsed_url
     else
       render json: @parsed_url.errors, status: :unprocessable_entity

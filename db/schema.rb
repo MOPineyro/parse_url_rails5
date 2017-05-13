@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170513181501) do
   enable_extension "plpgsql"
 
   create_table "parsed_urls", force: :cascade do |t|
-    t.string "url"
+    t.string "url", null: false
     t.string "h1_tags", default: [], array: true
     t.string "h2_tags", default: [], array: true
     t.string "h3_tags", default: [], array: true
